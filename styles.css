@@ -20,25 +20,35 @@ html, body {
 }
 
 .container {
-  background-color: rgb(188, 101, 101);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 60px); 
-  margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 .drawing-area {
-  width: 600px;
-  height: 600px;
-  background-color: aqua;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 500px;       /* Total width of drawing area */
+    height: 500px;      /* Total height */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* 5 columns */
+    grid-template-rows: repeat(5, 1fr);     /* 5 rows */
+    gap: 1px;           /* Space between grid cells */
+    background-color: #050505; /* Grid line color */
+    border: 2px solid #131212;
+    padding: 1px;
 }
 
 .header h1 {
   text-align: center;
-  color: rgb(10, 10, 10);
+  color: red;
   margin: 0; 
+}
+/* Add this new rule for grid cells */
+.grid-cell {
+    background-color: white;    /* Must contrast with gap color */
+    transition: background-color 0.1s;
+}
+
+/* Optional hover effect */
+.grid-cell:hover {
+    background-color: #ccc;
 }
